@@ -15,8 +15,11 @@ using namespace std;
 
 int numberOfCharsInArray(char* array) {
        int numberOfChars = 0;
-       for(int i = 0; i<sizeof(array)/sizeof(array[0]); i++) {
+       //cout<<array.length<<endl;
+       int i = 0;
+       while(array[i] != '\0') {
            numberOfChars++;
+           i++;
        }
        return numberOfChars;
  }
@@ -27,15 +30,15 @@ void change(char* input){
 	oldLength = numberOfCharsInArray(input);
 	for (int i = 0; i < oldLength; ++i)
 	{
-		if (input[i] = ' ')
+		if (input[i] == ' ')
 		{
 			spaceCount++;
 		}
 	}
 	newLength = oldLength + spaceCount*2;
+	newLength+=1;
 	input[newLength] = '\0';
-	cout<<oldLength<<endl;
-	cout<<newLength<<endl;
+
 	for (int i = oldLength; i >= 0; i--)
 	{
 		if (input[i] == ' ')
@@ -44,12 +47,13 @@ void change(char* input){
 			input[newLength-2] = '2';
 			input[newLength-3] = '%';
 			newLength = newLength - 3;
-			//cout<<input[i]<<endl;
 		}
-		else{
+		else
+		{
 			input[newLength-1] = input[i];
 			newLength = newLength-1;
 		}
+		cout<<input<<endl;
 	}
 }
 
@@ -62,3 +66,5 @@ int main(int argc, char const *argv[])
 	cout<<"after: "<<str<<endl;
 	return 0;
 }
+
+
