@@ -5,6 +5,7 @@
 // of the other.
 
 //#include "string"
+
 #include <iostream>
 #include <algorithm>
 
@@ -12,7 +13,7 @@
 using namespace std;
 
 
-bool sort(string one, string two){
+bool sorting(string one, string two){
 	if(one.length() != two.length()){
 		return false;
 	}
@@ -29,6 +30,10 @@ bool sort(string one, string two){
 
 int main(int argc, char const *argv[])
 {
-	/* code */
+	string one, two;
+	cin>>one>>two;
+	
+	cout<<sorting(one, two);
+
 	return 0;
 }
