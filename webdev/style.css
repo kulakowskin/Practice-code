@@ -1,0 +1,73 @@
+body{
+      background-color: #e4e4e4;
+}
+h1{
+      font-weight: bolder;
+      border-bottom-style: solid;
+      border-bottom-color: orange;
+      border-bottom-width: thick;
+}
+
+#searchBar {
+  margin: 15px 10px;
+}
+
+#sizing-addon1 {
+      padding: 0;
+}
+
+.tableWrapper {
+  max-height: 400px;
+  overflow: auto;
+  border-style: solid;
+  border-color: #1447c8;
+  border-width: 2px;
+}
+.details{
+      white-space: pre-wrap;
+}
+
+tr,
+th,
+td {
+      border: 1px solid #1447c8;
+      padding: 10px 15px;
+}
+th{
+      border-bottom-width: 2px;
+      background-color: #66b2e8;
+}
+tr:nth-child(even){background-color: #fbe4cd}
+
+#rm {
+      width: 20px;
+}
+
+#newInput{
+      margin: 20px 0;
+      width: 100%;
+      clear: both;
+}
+
+.input-group-addon,
+.form-control{
+      border-style: solid;
+      border-color: black;
+}
+
+.input-group{
+      padding: 5px;
+}
+#btn-div{
+      padding-top: 12px;
+      padding-right: 6px;
+      font-size: 17px;
+}
+
+.jumbotron{
+      background-color: #66b2e8;
+}
+
+.entryText{
+      font-size: 17px;
+}
