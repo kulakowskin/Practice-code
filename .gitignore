@@ -1,2 +1,4 @@
 *.class
 *.o
+*.DS_Store
+*.idea
