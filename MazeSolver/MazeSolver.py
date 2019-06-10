@@ -3,7 +3,7 @@
 # April 10, 2018
 import sys
 import time
-import cv2
+import curses
 
 
 f = open("maze1.txt","r")
@@ -21,25 +21,34 @@ def coolPrint(text):
     for char in text:
         sys.stdout.write(char)
         sys.stdout.flush()
-        time.sleep(0.05)
+        #time.sleep(0.05)
     print ("\n")
 
 def player():
     coolPrint("Use the arrow keys to navigate your way through the maze.")
     coolPrint("Ready Player One? GO!")
-    while True:
-        cv2.waitKey(1) & 0xFF
-        if key == 0:
-            print ("up")
-        elif key == 1:
-            print ("down")
-        elif key == 2:
-            print ("left")
-        elif key == 3:
-            print ("right")
-            # 255 is what the console returns when there is no key press...
-        elif key != 255:
-            print(key)
+    stdscr = curses.initscr()
+    curses.cbreak()
+    stdscr.keypad(1)
+    try:
+        while True:
+            time.sleep(.1)
+            key = cv2.waitKey(10) & 0xFF
+            if key == 0:
+                print ("up")
+            elif key == 1:
+                print ("down")
+            elif key == 2:
+                print ("left")
+            elif key == 3:
+                print ("right")
+                # 255 is what the console returns when there is no key press...
+            elif key != 255:
+                print(key)
+    except KeyboardInterrupt:
+        curses.nocbreak()
+        stdscr.keypad(0)
+        curses.echo()            
 
 
 def robot():
